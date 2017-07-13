@@ -13,7 +13,7 @@
 // { value: 4, done: false }
 // { value: undefined, done: true }
 
-export function* GeneratorFn(items: any[]) {
+export function* GeneratorFn(items: any[]): Generator {
     let index = 0,
         max = items.length;
     while (index < max) {

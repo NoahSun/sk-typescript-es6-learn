@@ -13,28 +13,29 @@
 // { value: 4, done: false }
 // { value: undefined, done: true }
 
-interface InterfaceIterator {
-    index: number;
-    max: number;
-    next?: Function;
-    [others: string]: any;
-}
-
 // 为什么要用一个export？因为在下面我定义了一个与1_iterator.ts中一样的ret变量，
 // 在ts看来没有使用import和export的文件所有定义的变量都是全局变量。
-export function IteratorFactory(items: any) {
-    let iterator: InterfaceIterator = {
-        index: 0,
-        max: items.length
-    };
 
-    iterator.next = function () {
-        return this.index === this.max
+interface MyIteratorResult<T> {
+    value: any,
+    done: boolean
+}
+interface MyIterator<T> {
+    next(value?: any): MyIteratorResult<T>;
+    return?(value?: any): MyIteratorResult<T>;
+    throw?(e?: any): MyIteratorResult<T>;
+}
+interface MyGenerator extends MyIterator<any> { }
+
+export function IteratorFactory(items: any[]): MyGenerator {
+    let index = 0,
+        max = items.length;
+
+    return {
+        next: () => index === max
             ? { value: undefined, done: true }
-            : { value: items[this.index++], done: false };
+            : { value: items[index++], done: false }
     };
-
-    return iterator;
 }
 
 let ret,
@@ -42,5 +43,5 @@ let ret,
 
 do {
     ret = iterator.next();
-    console.log(ret)
+    console.log(ret);
 } while (!ret.done);
