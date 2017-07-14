@@ -5,4 +5,4 @@
 
 ## 目录
 
-[genterator](./src/app/generator/)
+<a href="./src/app/generator/" target="_blank">genterator</a>
