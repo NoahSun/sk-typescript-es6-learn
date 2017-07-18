@@ -5,6 +5,8 @@
 
 ## 目录
 
-<a href="./src/app/generator/" target="_blank">genterator</a>
+1. <a href="./src/app/generator/" target="_blank">genterator</a>
+
+2. <a href="./src/app/decorator/" target="_blank">decorator</a>
 
 未完待续。。。

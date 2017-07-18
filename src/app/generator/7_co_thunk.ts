@@ -45,14 +45,3 @@ export function* GeneratorFunction() {
 }
 
 co(GeneratorFunction).then((res: any) => console.log(`${res}`['info']));
-
-co(function* () {
-    const result = yield Promise.resolve(true);
-    return result;
-}).then(res => console.log(`${res}`['info']));
-
-let fn = co.wrap(function* () {
-    return yield Promise.resolve(true);
-});
-
-fn(true).then(res => console.log(`${res}`['help']));
