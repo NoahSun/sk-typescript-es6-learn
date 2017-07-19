@@ -8,11 +8,12 @@
 
 function testable(target) {
     target.isTestable = true;
+    return;
 }
 
 // tsconfig.json加上了expirementalDecorators:true还需要加上include:['项目相关源码路径']
 @testable
-class MyTestableClass {
+export class MyTestableClass {
     static isTestable;
 }
 
