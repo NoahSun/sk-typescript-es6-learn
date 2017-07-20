@@ -6,15 +6,21 @@
  * @desc 装饰器修饰类的属性
 */
 
-function readonly(target, propertyKey, descriptor): MethodDecorator {
-    console.log(target, propertyKey, descriptor);
+function readonly(target: any, propertyKey: PropertyKey, descriptor: TypedPropertyDescriptor<any>): MethodDecorator {
     descriptor.writable = false;
-    return descriptor;
+    return;
 }
 
 class Person {
     @readonly
     name() {
-
+        console.log(1);
     }
 }
+
+var p = new Person();
+p.name = () => {
+    console.log(2)
+}
+// 依然输出1，但是编写时不会报错
+p.name();
