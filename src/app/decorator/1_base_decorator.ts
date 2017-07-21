@@ -21,22 +21,22 @@ export class MyTestableClass {
 console.log(MyTestableClass.isTestable);
 
 // 例二：
-function sealed(target: Function) {
-    Object.seal<Function>(target);
-    Object.seal(target.prototype);
+function sealed(constructor: Function) {
+    Object.seal<Function>(constructor);
+    Object.seal(constructor.prototype);
 }
 
 @sealed
 class MyClass {
-    constructor() {
-        console.log(1);
+    constructor(num: number) {
+        console.log('constructor: ' + num);
     }
     a: number = 2;
     b: string = 'three';
     [otherProp: string]: any;
 }
 
-const mc = new MyClass();
+const mc = new MyClass(1);
 mc.b = '1';
 mc.c = 3;
 try {
@@ -46,5 +46,6 @@ catch (e) {
     console.log('使用了sealed装饰器后不能配置(添加、删除)类的属性，只能更改值');
 }
 
+console.log(mc.b);
 console.log(mc.c);
 console.log(MyClass.prototype.c);
