@@ -14,14 +14,21 @@ export interface Counter {
 
 // 一个接口可以同时作为函数和对象使用，并带有额外的属性
 
+// ----------------------- ↓
 function getCounter(): Counter {
-    let counter = <Counter>function (start: number) { };
+    // --------------- ↓
+    let counter = <Counter>function (start: number) {
+        console.log(start);
+        return start.toString();
+    };
     counter.interval = 123;
-    counter.reset = () => { }
+    counter.reset = () => {
+        console.log("counter reset function.");
+    }
     return counter;
 }
 
 let c = getCounter();
 c(10);
 c.reset();
-c.interval = 5.0;
+console.log(c.interval);
