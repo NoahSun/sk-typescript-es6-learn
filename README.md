@@ -13,6 +13,6 @@
 
 ### Typescript
 
-1. <a href="./src/app/ts_interface/" target="_blank">interface</a>
+1. <a href="./src/app/ts_interface/" target="_blank">typescript-interface</a>
 
 未完待续。。。
