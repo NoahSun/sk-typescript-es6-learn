@@ -6,7 +6,7 @@
  * @desc 类装饰器
 */
 
-function classDecorator<T extends { new (...arg: any[]): {} }>(constructor: T) {
+export function classDecorator<T extends { new (...arg: any[]): {} }>(constructor: T) {
     return class extends constructor {
         newProperty = "new property";
         hello = "override";
