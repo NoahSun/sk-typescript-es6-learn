@@ -31,7 +31,7 @@ class MyTestableClass {
 MyTestableClass.isTestable = false;
 
 let myTClass = new MyTestableClass();
-console.log("1. ", myTClass.isTestable)
+console.log(myTClass.isTestable)
 
 // ------------------------------------------------------------------------ //
 
