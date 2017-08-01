@@ -6,7 +6,7 @@
  * @desc 装饰器修饰类的属性
 */
 
-function readonly(target: any, propertyKey: PropertyKey, descriptor: PropertyDescriptor) {
+export function readonly(target: any, propertyKey: PropertyKey, descriptor: PropertyDescriptor) {
     descriptor.writable = false;
     return;
 }
