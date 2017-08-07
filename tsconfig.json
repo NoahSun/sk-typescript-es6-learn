@@ -15,7 +15,9 @@
             "es2017",
             "dom"
         ],
-        "pretty": true
+        "pretty": true,
+        "noEmitHelpers": false,
+        "importHelpers": true
     },
     "include": [
         "./src/app/**/*.ts",
