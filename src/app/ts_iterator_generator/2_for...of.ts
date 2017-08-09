@@ -7,6 +7,8 @@
  *       for...of会遍历可迭代的对象，调用对象上的Symbol.iterator方法。
 */
 
+export { };
+
 let someArray = [1, "string", false];
 let myStr = "abcdefghijklmnopqrstuvwxyz";
 let pets = new Set(["Cat", "Dog", "Hamster"]);

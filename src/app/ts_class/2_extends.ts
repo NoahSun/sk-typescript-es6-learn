@@ -6,6 +6,8 @@
  * @desc 类——继承
 */
 
+export { }
+
 // 基类
 class Animal {
     name: string;

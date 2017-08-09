@@ -9,22 +9,22 @@
 */
 
 // 输出：
-// f(): evaluated
-// g(): evaluated
+// f(): evaluated, prop is { 1 }
+// g(): evaluated, prop is { 2 }
 // g(): called
 // f(): called
-// x
+// 3
 
-function f(props) {
-    console.log("f(): evaluated");
+function f(prop) {
+    console.log(`f(): evaluated, prop is { ${prop} }`);
     return (target, propertyKey, descriptor) => {
         console.log("f(): called");
         return descriptor;
     }
 }
 
-function g(props): MethodDecorator {
-    console.log("g(): evaluated");
+function g(prop): MethodDecorator {
+    console.log(`g(): evaluated, prop is { ${prop} } `);
     return (target: C, propertyKey: PropertyKey, descriptor: TypedPropertyDescriptor<any>): TypedPropertyDescriptor<any> => {
         console.log("g(): called");
         return descriptor;
