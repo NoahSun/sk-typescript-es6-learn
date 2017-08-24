@@ -1,7 +1,9 @@
-function Raix2Radix(fromRadix = 10, toRadix, byteLen: number = 8, num): string {
-    let remainderArr = [], result;
+function Radix2Radix(fromRadix = 10, toRadix, byteLen: number = 8, num): string {
+    let remainderArr: number[] = [],
+        result: string;
     const calcRemainder = (toRadix, num): string => {
-        let quotient, remainder;
+        let quotient: number,
+            remainder: number;
         if (fromRadix === 10 && toRadix === 2) {
             quotient = Math.floor(num / 2);
             remainder = num % 2;
@@ -28,4 +30,4 @@ function Raix2Radix(fromRadix = 10, toRadix, byteLen: number = 8, num): string {
     return result;
 }
 
-console.log(Raix2Radix(10, 2, 8, 42));
+console.log(Radix2Radix(10, 2, 8, 42));
