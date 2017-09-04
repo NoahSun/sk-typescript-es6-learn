@@ -6,7 +6,7 @@
  * @desc co使用async/await
 */
 
-const tick = (time: any) => new Promise((resolve, reject) => {
+export const tick = (time: any) => new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(time);
     }, time);
