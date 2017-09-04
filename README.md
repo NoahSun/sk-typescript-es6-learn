@@ -23,4 +23,6 @@
 
 5. <a href="./src/app/ts_design_patterns/" target="_blank">typescript-design-patterns</a>
 
+6. <a href="./src/app/ts_new_feature/" target="_blank">typescript-new-feature</a>
+
 未完待续。。。

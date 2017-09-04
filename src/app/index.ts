@@ -5,12 +5,6 @@ $(() => {
 
 });
 
-class C {
-    @readonly
-    @enumerable(false)
-    method() { }
-}
-
 const readonly = (target, name, discriptor: TypedPropertyDescriptor<any>) => {
     discriptor.writable = false;
     return discriptor;
@@ -19,4 +13,10 @@ const readonly = (target, name, discriptor: TypedPropertyDescriptor<any>) => {
 const enumerable = (value: boolean): MethodDecorator => <T>(target: Object, name: string | Symbol, discriptor: TypedPropertyDescriptor<T>) => {
     discriptor.enumerable = value;
     return discriptor;
+}
+
+class C {
+    @readonly
+    @enumerable(false)
+    method() { }
 }
