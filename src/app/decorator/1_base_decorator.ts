@@ -30,11 +30,12 @@ function sealed(constructor: Function) {
 
 @sealed
 class MyClass {
-    constructor(num: number) {
-        console.log('constructor: ' + num);
-    }
     a: number = 2;
     b: string = 'three';
+    constructor(num: number) {
+        console.log('constructor: ' + num);
+        this.a = 2;
+    }
     [otherProp: string]: any;
 }
 
@@ -42,9 +43,8 @@ const mc = new MyClass(1);
 mc.b = '1';
 mc.c = 3;
 try {
-    MyClass.prototype.c = 3
-}
-catch (e) {
+    MyClass.prototype.c = 3;
+} catch (e) {
     console.log('使用了sealed装饰器后不能配置(添加、删除)类的属性，只能更改值');
 }
 

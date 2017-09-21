@@ -14,15 +14,15 @@
 // { value: undefined, done: true }
 
 export function* GeneratorFn(items: any[]): Generator {
-    let index = 0,
-        max = items.length;
+    let index = 0;
+    const max = items.length;
     while (index < max) {
         yield items[index++];
     }
 }
 
-let ret,
-    generator = GeneratorFn([1, 2, 3, 4]);
+let ret;
+const generator = GeneratorFn([1, 2, 3, 4]);
 
 do {
     ret = generator.next();

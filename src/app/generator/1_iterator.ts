@@ -17,8 +17,8 @@
 // 在ts看来没有使用import和export的文件所有定义的变量都是全局变量。
 
 interface MyIteratorResult<T> {
-    value: any,
-    done: boolean
+    value: any;
+    done: boolean;
 }
 interface MyIterator<T> {
     next(value?: any): MyIteratorResult<T>;
@@ -28,8 +28,8 @@ interface MyIterator<T> {
 interface MyGenerator extends MyIterator<any> { }
 
 export function IteratorFactory(items: any[]): MyGenerator {
-    let index = 0,
-        max = items.length;
+    let index = 0;
+    const max = items.length;
 
     return {
         next: () => index === max
@@ -38,8 +38,8 @@ export function IteratorFactory(items: any[]): MyGenerator {
     };
 }
 
-let ret,
-    iterator = IteratorFactory([1, 2, 3, 4]);
+let ret;
+const iterator = IteratorFactory([1, 2, 3, 4]);
 
 do {
     ret = iterator.next();

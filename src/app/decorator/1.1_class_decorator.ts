@@ -6,11 +6,11 @@
  * @desc 类装饰器
 */
 
-export function classDecorator<T extends { new (...arg: any[]): {} }>(constructor: T) {
+export function classDecorator<T extends { new(...arg: any[]): {} }>(constructor: T) {
     return class extends constructor {
         newProperty = "new property";
         hello = "override";
-    }
+    };
 }
 
 @classDecorator
@@ -24,7 +24,6 @@ class Greeter {
         this.prop1 = 'init prop';
     }
 }
-
 
 class Greeter1 {
     property = "property";
