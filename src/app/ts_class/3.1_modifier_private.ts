@@ -41,11 +41,10 @@ class Employee {
 }
 
 let animal = new Animal("Goat");
-let rhino = new Rhino();
-let employee = new Employee("Bob");
+const rhino = new Rhino();
+const employee = new Employee("Bob");
 
 // 类型相同
 animal = rhino;
 // Employee里也有一个私有成员 name，但明显不是Animal里面定义的那一个。
 // animal = employee;
-

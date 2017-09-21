@@ -20,11 +20,11 @@ class Person {
 
 Person.prototype.name = () => {
     console.log(2);
-}
+};
 
-var p = new Person();
+const p = new Person();
 p.name = () => {
-    console.log(3)
-}
+    console.log(3);
+};
 // 依然输出1，但是编写时不会报错
 p.name();

@@ -7,7 +7,7 @@
 */
 
 let count = 1;
-const tick = () => new Promise(resolve => {
+const tick = () => new Promise((resolve) => {
     setTimeout(() => {
         console.log('tick %s after %s ms', count++, 1000);
         resolve();
@@ -21,13 +21,15 @@ function* GeneratorFactory() {
 }
 
 export const run = (generator: Generator) => {
-    let ret = generator.next();
-    if (ret.done) return;
+    const ret = generator.next();
+    if (ret.done) {
+        return;
+    }
     console.log(ret.value.toString());
     ret.value.then((response: any) => {
-        console.log(response)
+        console.log(response);
         run(generator);
     });
-}
+};
 
 run(GeneratorFactory());

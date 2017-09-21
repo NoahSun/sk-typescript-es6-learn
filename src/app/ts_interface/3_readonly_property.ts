@@ -11,7 +11,7 @@ export interface Point {
     readonly y: number;
 }
 
-let p1: Point = {
+const p1: Point = {
     x: 10,
     y: 10
 };
@@ -22,7 +22,7 @@ let p1: Point = {
 // p1.y = 5;
 
 let a: number[] = [1, 2, 3];
-let ro: ReadonlyArray<number> = a;
+const ro: ReadonlyArray<number> = a;
 // errors
 // ro[0] = 12;
 // ro.push(12);

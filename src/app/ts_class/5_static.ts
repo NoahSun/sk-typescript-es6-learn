@@ -10,7 +10,7 @@ export class Grid {
     private static origin = {
         x: 0,
         y: 0
-    }
+    };
     constructor() {
 
     }
@@ -26,7 +26,7 @@ const grid = new Grid();
 console.log(grid.origin);
 grid.origin = {
     x: 1, y: 2
-}
+};
 console.log(grid.origin);
 // static也可以加上private修饰符，但是就不能直接用Grid.origin了
 // console.log(Grid.origin);

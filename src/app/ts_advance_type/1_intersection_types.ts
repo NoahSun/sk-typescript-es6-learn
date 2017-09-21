@@ -9,13 +9,13 @@
 */
 
 export function extend<T, U>(first: T, second: U): T & U {
-    let result = <T & U>{};
-    for (let id in first) {
-        (<any>result)[id] = (<any>first)[id];
+    const result = {} as T & U;
+    for (const id in first) {
+        (<any> result)[id] = (first as any)[id];
     }
-    for (let id in second) {
+    for (const id in second) {
         if (!result.hasOwnProperty(id)) {
-            (<any>result)[id] = (<any>second)[id];
+            (result as any)[id] = (second as any)[id];
         }
     }
     return result;
@@ -35,7 +35,7 @@ class ConsoleLogger implements Loggable {
     }
 }
 
-let jim = extend(new Person("Jim"), new ConsoleLogger());
-let n = jim.name;
+const jim = extend(new Person("Jim"), new ConsoleLogger());
+const n = jim.name;
 jim.log();
 console.log(jim);

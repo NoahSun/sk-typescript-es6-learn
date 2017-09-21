@@ -8,11 +8,11 @@
 
 // 在typescript里，成员都是默认为pulic。
 export class Animal {
-    public name: string;
-    public constructor(theName: string) {
+    name: string;
+    constructor(theName: string) {
         this.name = theName;
     }
-    public moveBy(distanceInMeters: number) {
+    moveBy(distanceInMeters: number) {
         console.log(`${this.name} moved ${distanceInMeters}`);
     }
 }

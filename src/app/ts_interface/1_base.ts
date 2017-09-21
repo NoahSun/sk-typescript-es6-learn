@@ -10,9 +10,8 @@ export function printLabel(labelledObj: { label: string }) {
     console.log(labelledObj.label);
 }
 
-let myObj = { size: 10, label: "Size 10 Object" };
+const myObj = { size: 10, label: "Size 10 Object" };
 printLabel(myObj);
-
 
 // 使用接口来描述
 interface LabelledValue {
@@ -23,5 +22,5 @@ function printLabel1(labelledObj: LabelledValue) {
     console.log(labelledObj.label);
 }
 
-let myObj1 = { size: 10, label: "Size 10 Object" };
+const myObj1 = { size: 10, label: "Size 10 Object" };
 printLabel(myObj);

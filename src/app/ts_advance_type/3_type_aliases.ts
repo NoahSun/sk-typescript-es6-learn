@@ -8,7 +8,7 @@
  * 类型别名有时和接口很像，但是可以作用于原始值，联合类型，元组以及其他任何你需要手写的类型
 */
 
-export { }
+export { };
 
 type Name = string;
 type NameResolver = () => string;
@@ -23,12 +23,12 @@ function getName(n: NameOrResolver): Name {
 
 // 同接口（interface）一样，类型别名（type）也可以是泛型
 // 我们可以添加类型参数并且在别名声明的右侧传入
-type Container<T> = { value: T };
+interface Container<T> { value: T; }
 // 我们也可以使用类型别名来在属性里面引用自己
-type Tree<T> = {
-    value: T,
+interface Tree<T> {
+    value: T;
     left: Tree<T>;
-    right: Tree<T>
+    right: Tree<T>;
 }
 
 // 与交叉类型一起使用，我们可以创建出一些十分稀奇古怪的类型。
@@ -36,17 +36,16 @@ type LinkedList<T> = T & { next: LinkedList<T> };
 interface Person {
     name: string;
 }
-var people: LinkedList<Person> = <LinkedList<Person>>{};
-var s = people.name;
-var s = people.next.next.name;
-var s = people.next.next.next.next.next.name // ...next...
+const people: LinkedList<Person> = <LinkedList<Person>> {};
+let s = people.name;
+s = people.next.next.name;
+s = people.next.next.next.next.next.name; // ...next...
 
 // 然而类型别名不能循环引用
 // type Yikes = Array<Yikes> //Error!
 
-
 // 接口 vs. 类型别名
-type Alias = { num: number };
+interface Alias { num: number; }
 interface Interface {
     num: number;
 }

@@ -7,8 +7,8 @@
 */
 
 function* GeneratorFn(items: Function[]) {
-    let index = 0,
-        max = items.length;
+    let index = 0;
+    const max = items.length;
     while (index < max) {
         yield items[index++];
     }
@@ -20,13 +20,15 @@ const tick = (done: Function) => {
         console.log('tick %s after %s ms', count++, 1000);
         done();
     }, 1000);
-}
+};
 
 export const run = (generator: Generator) => {
-    let ret = generator.next();
-    if (ret.done) return;
+    const ret = generator.next();
+    if (ret.done) {
+        return;
+    }
     console.log(ret.value.toString());
     ret.value(() => run(generator));
-}
+};
 
 run(GeneratorFn([tick, tick, tick]));

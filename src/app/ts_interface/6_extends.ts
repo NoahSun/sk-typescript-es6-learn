@@ -22,12 +22,12 @@ interface Square1 extends Shape, PenStroke {
     sideLength: number;
 }
 
-let square = <Square>{};
+const square = <Square> {};
 square.color = "blue";
 square.sideLength = 10;
 
 // 多接口继承
-let square1 = <Square1>{};
+const square1 = <Square1> {};
 square1.color = "blue";
 square1.penWidth = 10;
 square1.sideLength = 5.0;

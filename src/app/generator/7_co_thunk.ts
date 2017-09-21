@@ -6,20 +6,20 @@
  * @desc 使用co中间件
 */
 
-const colors = require('colors');
-const co = require('co');
+import * as co from 'co';
+import * as colors from 'colors';
 
 colors.setTheme({
-    silly: 'rainbow',
-    input: 'grey',
-    verbose: 'cyan',
-    prompt: 'red',
-    info: 'green',
-    data: 'blue',
-    help: 'cyan',
-    warn: 'yellow',
-    debug: 'magenta',
-    error: 'red'
+    data: "blue",
+    debug: "magenta",
+    error: "red",
+    help: "cyan",
+    info: "green",
+    input: "grey",
+    prompt: "red",
+    silly: "rainbow",
+    verbose: "cyan",
+    warn: "yellow"
 });
 
 const tick = (time: number) => (done: Function) => {
@@ -27,7 +27,7 @@ const tick = (time: number) => (done: Function) => {
     setTimeout(() => {
         done(null, time);
     }, time);
-}
+};
 
 export function* GeneratorFunction() {
     let time, count = 1, total = 0;

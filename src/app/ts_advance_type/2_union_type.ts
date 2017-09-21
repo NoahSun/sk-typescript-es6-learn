@@ -42,18 +42,18 @@ function getSmallPet(): Pet {
     return {
         swim() { },
         layEggs() { }
-    }
+    };
 }
 
 // 联合类型中，我们只能够访问共同拥有的成员
-let pet = getSmallPet();
+const pet = getSmallPet();
 pet.layEggs();
 
 // 使用类型断言，区分类型
-if ((<Fish>pet).swim) {
-    (<Fish>pet).swim();
+if ((<Fish> pet).swim) {
+    (<Fish> pet).swim();
 } else {
-    (<Bird>pet).fly();
+    (<Bird> pet).fly();
 }
 
 // 用户自定义的类型保护
@@ -61,15 +61,15 @@ if ((<Fish>pet).swim) {
 function isFish(pet: Pet): pet is Fish {
     //                              ^^^^^^^^^^^
     //                                类型谓词
-    return (<Fish>pet).swim !== undefined;
+    return (<Fish> pet).swim !== undefined;
 }
 
 function isBird(pet: Pet): pet is Bird {
-    return (<Bird>pet).fly !== undefined;
+    return (<Bird> pet).fly !== undefined;
 }
 
 function isSnake(pet: Pet): pet is Snake {
-    return (<Snake>pet).crawl !== undefined;
+    return (<Snake> pet).crawl !== undefined;
 }
 
 // 在调用isFish时，ts将变量缩减为具体的类型
@@ -111,7 +111,7 @@ function padLeft1(value: string, padding: string | number) {
  * 2.构造签名说返回的联合类型
  */
 interface Padder {
-    getPaddingString(): string
+    getPaddingString(): string;
 }
 
 class SpaceRepeatingPadder implements Padder {
@@ -134,12 +134,12 @@ function getRandomPadder() {
         new StringPadder(" ");
 }
 
-let padder: Padder = getRandomPadder();
+const padder: Padder = getRandomPadder();
 if (padder instanceof SpaceRepeatingPadder) {
-    padder; // 类型细化为 SpaceRepeatingPadder
+    padder.getPaddingString(); // 类型细化为 SpaceRepeatingPadder
 }
 if (padder instanceof StringPadder) {
-    padder; // 类型细化为 StringPadder
+    padder.getPaddingString(); // 类型细化为 StringPadder
 }
 
 // 如果编译器不能够去除null 或 undefined,你可以使用添加 ! 后缀的方法来手动去除

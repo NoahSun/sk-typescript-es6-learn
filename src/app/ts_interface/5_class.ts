@@ -30,7 +30,7 @@ class Clock1 implements ClockAndFuncInterface {
 
 // ! 类的静态部分和实例部分的区别
 interface ClockConstructor {
-    new (hour: number, minute: number);
+    new(hour: number, minute: number);
 }
 
 // error
@@ -41,4 +41,3 @@ interface ClockConstructor {
         constructor(hour: number, minute: number) { }
     } 
 */
-

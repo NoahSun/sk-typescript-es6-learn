@@ -7,35 +7,35 @@
 */
 
 abstract class Car {
-    public description: string;
+    description: string;
 
-    public getDescription(): string {
+    getDescription(): string {
         return this.description;
     }
 
-    public abstract cost(): number;
+    abstract cost(): number;
 }
 
 class ModelS extends Car {
-    public description = "Model S";
+    description = "Model S";
 
-    public cost(): number {
+    cost(): number {
         return 73000;
     }
 }
 
 class ModelX extends Car {
-    public description = "Model X";
+    description = "Model X";
 
-    public cost(): number {
+    cost(): number {
         return 77000;
     }
 }
 
 abstract class CarOptions extends Car {
     decoratedCar: Car;
-    public abstract getDescription(): string;
-    public abstract cost(): number;
+    abstract getDescription(): string;
+    abstract cost(): number;
 }
 
 class EnhancedAutoPilot extends CarOptions {
@@ -44,10 +44,10 @@ class EnhancedAutoPilot extends CarOptions {
         super();
         this.decoratedCar = car;
     }
-    public getDescription(): string {
+    getDescription(): string {
         return this.decoratedCar.getDescription() + ', Enhanced AutoPilot';
     }
-    public cost(): number {
+    cost(): number {
         return this.decoratedCar.cost() + 5000;
     }
 }

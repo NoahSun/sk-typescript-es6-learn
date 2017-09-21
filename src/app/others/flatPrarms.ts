@@ -1,10 +1,8 @@
-interface InterfaceValueOrFunction {
-    (key: string, valueOrFunction: any): void;
-}
+type InterfaceValueOrFunction = (key: string, valueOrFunction: any) => void;
 let prefix: any,
     s: any[] = [],
     add: InterfaceValueOrFunction = function (key, valueOrFunction) {
-        let value = (
+        const value = (
             typeof valueOrFunction === 'function'
                 ? valueOrFunction() : valueOrFunction
         );
@@ -18,7 +16,7 @@ function flatParams(
 ) {
     const args = arguments;
     if (value.constructor.name === 'Object') {
-        for (let key in value) {
+        for (const key in value) {
             args.callee(prefix ? `${prefix}.${key}` : `${key}`, value[key], add);
         }
     } else if (value.constructor.name === 'Array') {
@@ -27,10 +25,10 @@ function flatParams(
                 `${prefix}[${i}]`,
                 v,
                 add
-            )
+            );
         });
     } else {
-        add(prefix, value)
+        add(prefix, value);
     }
 }
 

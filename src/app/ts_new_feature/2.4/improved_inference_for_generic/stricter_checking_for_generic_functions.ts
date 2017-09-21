@@ -9,7 +9,7 @@
 type A = <T, U>(x: T, y: U) => [T, U];
 type B = <S>(x: S, y: S) => [S, S];
 
-export function f(a: A, b:B) {
+export function f(a: A, b: B) {
     // a = b;  // Error
     b = a;  // Ok
 }

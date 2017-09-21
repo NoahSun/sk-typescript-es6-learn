@@ -8,19 +8,24 @@
  * 在实际应用中，祝福传字面量类型可以与联合类型，类型保护和类型别名很好的配合。
 */
 
-export { }
+export { };
 
 type Easing = "ease-in" | "ease-out" | "ease-in-out";
 class UIElement {
     animate(dx: number, dy: number, easing: Easing) {
-        if (easing === "ease-in") { }
-        else if (easing === "ease-out") { }
-        else if (easing === "ease-in-out") { }
-        else { }
+        if (easing === "ease-in") {
+
+        } else if (easing === "ease-out") {
+
+        } else if (easing === "ease-in-out") {
+
+        } else {
+
+        }
     }
 }
 
-let button = new UIElement();
+const button = new UIElement();
 button.animate(0, 0, "ease-in");
 
 // 字符串字面量类型还可以用于区分函数重载

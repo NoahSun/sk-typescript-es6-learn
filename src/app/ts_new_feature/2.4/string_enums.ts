@@ -14,6 +14,6 @@ export enum Colors {
 
 // NOTE: 字符串枚举不能被方向映射到枚举成员的名字
 
-console.log(Colors)
+console.log(Colors);
 
 // Error, Colors["RED"]

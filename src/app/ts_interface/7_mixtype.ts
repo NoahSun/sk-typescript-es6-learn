@@ -17,18 +17,18 @@ export interface Counter {
 // ----------------------- ↓
 function getCounter(): Counter {
     // --------------- ↓
-    let counter = <Counter>function (start: number) {
+    const counter = <Counter> function (start: number) {
         console.log(start);
         return start.toString();
     };
     counter.interval = 123;
     counter.reset = () => {
         console.log("counter reset function.");
-    }
+    };
     return counter;
 }
 
-let c = getCounter();
+const c = getCounter();
 c(10);
 c.reset();
 console.log(c.interval);

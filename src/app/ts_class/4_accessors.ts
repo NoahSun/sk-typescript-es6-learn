@@ -18,17 +18,16 @@ class Employee {
     }
     set fullname(newName: string) {
         if (!newName) {
-            throw "Error: newName is empty!";
+            throw new Error("Error: newName is empty!");
         }
         if (passcode && passcode === "secret passcode") {
             this._fullname = newName;
             console.log("object");
         } else {
-            throw "Error: Unauthorized update of employee!";
+            throw new Error("Error: Unauthorized update of employee!");
         }
     }
 }
 
-let employee = new Employee();
+const employee = new Employee();
 employee.fullname = "";
-

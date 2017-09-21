@@ -26,7 +26,7 @@ abstract class Department {
     printName(): void {
         console.log("Department name: ", this.name);
     }
-    abstract printMeeting(): void;  //抽象方法必须在派生类中实现
+    abstract printMeeting(): void;  // 抽象方法必须在派生类中实现
 }
 
 class AccountingDepartment extends Department {

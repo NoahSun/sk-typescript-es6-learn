@@ -36,8 +36,8 @@ class AnalogClock implements ClockInterface {
 
 // 创建不同类型的实例
 // createClock的第一个参数是ClockConstructor类型，所以在使用是将会检查第一个参数是否符合构造函数签名
-let digital = createClock(DigitalClock, 12, 17);
-let analog = createClock(AnalogClock, 7, 12);
+const digital = createClock(DigitalClock, 12, 17);
+const analog = createClock(AnalogClock, 7, 12);
 
 console.log(digital);
 console.log(analog);

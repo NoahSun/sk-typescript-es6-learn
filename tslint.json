@@ -5,18 +5,40 @@
     ],
     "jsRules": {},
     "rules": {
-        "no-trailing-whitespace": false,
-        "jsdoc-format": false,
+        "arrow-parens": false,
+        "ban-types": false,
+        "forin": false,
         "interface-name": false,
-        "one-variable-per-declaration": false,
-        "no-console": false,
-        "no-empty-interface": false,
-        "trailing-comma": false,
-        "quotemark": false,
+        "jsdoc-format": false,
         "max-classes-per-file": false,
         "member-access": [
             true,
             "no-public"
+        ],
+        "no-console": false,
+        "no-empty": false,
+        "no-empty-interface": false,
+        "no-shadowed-variable": false,
+        "no-string-literal": false,
+        "no-trailing-whitespace": false,
+        "one-variable-per-declaration": false,
+        "only-arrow-functions": false,
+        "quotemark": false,
+        "space-before-function-paren": false,
+        "trailing-comma": false,
+        "no-angle-bracket-type-assertion": false,
+        "member-ordering": false,
+        "variable-name": [
+            true,
+            "ban-keywords",
+            "check-format",
+            "allow-leading-underscore"
+        ],
+        "one-line": [
+            true,
+            "check-catch",
+            "check-finally",
+            "check-else"
         ]
     },
     "rulesDirectory": []

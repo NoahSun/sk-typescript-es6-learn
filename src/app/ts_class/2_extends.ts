@@ -43,8 +43,8 @@ class Horse extends Animal {
 }
 
 // 创建实例
-let sam: Snake = new Snake("Sammy the Python");
-let tom: Animal = new Horse("Tommy the Palomino");
+const sam: Snake = new Snake("Sammy the Python");
+const tom: Animal = new Horse("Tommy the Palomino");
 
 sam.move();
 tom.move(100);

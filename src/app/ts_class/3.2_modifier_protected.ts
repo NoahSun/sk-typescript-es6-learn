@@ -19,16 +19,15 @@ class Employee extends Person {
         super(name);
         this.department = department;
     }
-    public getElevatorPitch() {
+    getElevatorPitch() {
         return `Hello, my name is ${this.name} and I work in ${this.department}`;
     }
 }
 
-let howard = new Employee("Howard", "Sales");
+const howard = new Employee("Howard", "Sales");
 console.log(howard.getElevatorPitch());
 // name成员只能在Person类或Person的子类中使用
 // console.log(howard.name);
-
 
 // 构造函数（constructor）也是可以被标记成protected的。
 // 这就意味着这个类不能在包含它的类外被实例化，但是可以被继承。
@@ -49,6 +48,6 @@ class Employee1 extends Person1 {
     }
 }
 
-let noah = new Employee1("Noah", "IT");
+const noah = new Employee1("Noah", "IT");
 // Error: The 'Person' constructor is protected
 // let john = new Person1("John");
