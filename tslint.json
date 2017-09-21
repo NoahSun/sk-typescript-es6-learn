@@ -11,7 +11,13 @@
         "one-variable-per-declaration": false,
         "no-console": false,
         "no-empty-interface": false,
-        "trailing-comma": false
+        "trailing-comma": false,
+        "quotemark": false,
+        "max-classes-per-file": false,
+        "member-access": [
+            true,
+            "no-public"
+        ]
     },
     "rulesDirectory": []
 }
