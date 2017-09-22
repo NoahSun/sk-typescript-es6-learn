@@ -67,6 +67,8 @@ const CarFactoryWithTimeLimit = {
             powerlocks: 0,
             ac: 0
         };
+
+        // 遍历所有的功能并添加到car上
         if (features && features.length) {
             let i = 0;
             const l = features.length;
@@ -74,6 +76,76 @@ const CarFactoryWithTimeLimit = {
                 featureList[features[i]] = 1;
             }
         }
+
+        // 可以按照一定的顺序，并且只会添加一次功能
+        if (featureList.powerwindows) {
+            car = new PowerWindowsDecorator(car);
+        }
+        if (featureList.powerlocks) {
+            car = new PowerLocksDecorator(car);
+        }
+        if (featureList.ac) {
+            car = new ACDecorator(car);
+        }
+
+        return car;
     }
 }
 
+// 这样使用的时候就只会添加一次 ‘ac’的功能，并且是按照工厂内部的顺序添加
+const featureCar = CarFactoryWithTimeLimit(['ac', 'ac', 'powerlocks', 'powerwindows']);
+
+/**
+ * 工厂模式的强大不只限于对装饰者。基本上对共享一个接口的任何对象都可以用工厂来创建，它可以帮我们从代码里玻璃独立的对象。
+ * 你肯定知道你自己从工厂里接收到什么类型的对象，所以你唯一需要以来的只有工厂和一个接口，而无所谓有多少不同的对象实现了那个接口
+ */
+
+// 一个没有装饰者的工厂例子
+const ModelFactory = {
+    getModel: function (type) {
+        switch (type) {
+            case 'car':
+                console.log('car');
+                return this;
+
+            case 'cars':
+                console.log('cars');
+                return this;
+
+            default:
+                break;
+        }
+    },
+    get: function (type) {
+
+    },
+    getId: function () {
+
+    },
+    create: function () {
+
+    },
+    delete: function () {
+
+    }
+}
+
+const CarController = {
+    getCars: function () {
+        const model = ModelFactory.getModel('cars');
+        return model.get('all');
+    },
+    getCar: function (id) {
+        const model = ModelFactory.getModel('car');
+        return model.get(id);
+    },
+    createCar: function () {
+        const model = ModelFactory.getModel('car');
+        model.create();
+        return model.getId();
+    },
+    deleteCars: function (carIds) {
+        const model = ModelFactory.getModel('cars');
+        model.delete(carIds);
+    }
+}
