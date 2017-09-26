@@ -10,10 +10,10 @@
  * pull：只要订阅者觉得有必要，随时都可以检查发布者的变化
 */
 
-const Observable = function () {
+const ObservableTest = function () {
     this.subscribers = [];
 }
-Observable.prototype = {
+ObservableTest.prototype = {
     subscribe: function (callback) {
         // 大多数情况下，你会想要检查订阅者数组里是否已经存在这个回调函数（callback）了
         // 不过我们现在没有必要关注旁枝末节的东西
@@ -39,14 +39,37 @@ Observable.prototype = {
     }
 };
 
-const Observer = function (data) {
+// 订阅者只是一个被当作回调的函数
+const Observer1 = function (data) {
     console.log('接收消息： ' + data);
 }
-const Observer1 = function (data) {
+const Observer2 = function (data) {
     console.log('接收消息1： ' + data);
 }
 
-const observable = new Observable();
-observable.subscribe(Observer);
-observable.subscribe(Observer1);
-observable.publish('推送的消息');
+const observableTest = new ObservableTest();
+observableTest.subscribe(Observer1);
+observableTest.subscribe(Observer2);
+observableTest.publish('推送的消息');
+
+// Observable本身可以作为一个类来用，所以其他对象可以通过继承来变成发布者
+
+// pull方式。更多的用在信息交换的场合
+const Observable = function () {
+    this.status = "constructed";
+}
+Observable.prototype = {
+    getStatus: function () {
+        return this.status;
+    }
+};
+
+const Observer = function () {
+    this.subscriptions = [];
+}
+Observer.prototype = {
+    subscribeTo: function (observable) {
+        this.subscriptinos.push(observable);
+    },
+    unsubscribeFrom: function () { }
+}
