@@ -66,10 +66,45 @@ Observable.prototype = {
 
 const Observer = function () {
     this.subscriptions = [];
+    this.len = 0;
 }
 Observer.prototype = {
     subscribeTo: function (observable) {
-        this.subscriptinos.push(observable);
+        this.len = this.subscriptions.push(observable);
     },
-    unsubscribeFrom: function () { }
+    unsubscribeFrom: function () {
+        let i = 0;
+        const len = this.len;
+        for (; i < len; i++) {
+            if (this.subscriptions[i] === observable) {
+                // 找到订阅的对象删除，并立即返回
+                this.subscriptions.splice(i, 1);
+                return;
+            }
+        }
+    },
+    doSomethingIfOk: function () {
+        let i = 0;
+        const len = this.len;
+        // 便利subscriptions，确定每个元素的状态是否变成了ok
+        // 如果是ok的话就处理
+        for (; i < len; i++) {
+            if (this.subscriptions[i].getStatus() === 'ok') {
+                // do something
+                console.log('done');
+            }
+        }
+    }
 }
+
+const observer = new Observer();
+const observable = new Observable();
+observer.subscribeTo(observable);
+
+// 因为状态没有变成ok，所以什么都不会发生
+observer.doSomethingIfOk();
+
+// 把状态变为ok，就会进行处理
+observable.status = 'ok';
+observer.doSomethingIfOk();
+
