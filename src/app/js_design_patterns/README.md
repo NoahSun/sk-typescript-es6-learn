@@ -16,7 +16,13 @@
 * <a href="./7.2_factory_pattern.js" target="_blank">
     工厂模式（二）（Factory Pattern Part 2）
   </a>
-* 代理模式（Proxy Pattern）
-* 观察者模式（Observer Pattern）
-* 命令模式（Command Pattern）
+* <a href="./8_proxy_pattern.js" target="_blank">
+    代理模式（Proxy Pattern）
+  </a>
+* <a href="./9_oberser_pattern.js" target="_blank">
+    观察者模式（Observer Pattern）
+  </a>
+* <a href="./10_command_parttern.js" target="_blank">
+    命令模式（Command Pattern）
+  </a>
 * 责任链模式（Chain of Responsibility Pattern）
