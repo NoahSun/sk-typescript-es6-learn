@@ -25,4 +25,6 @@
 * <a href="./10_command_parttern.js" target="_blank">
     命令模式（Command Pattern）
   </a>
-* 责任链模式（Chain of Responsibility Pattern）
+* <a href="./11_the_chain_of_responsibility_patten.js" target="_blank">
+    责任链模式（Chain of Responsibility Pattern）
+  </a>
