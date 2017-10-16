@@ -3,10 +3,18 @@
 * <a href="./1_singleton_pattern.js" target="_blank">
     单例模式（Singleton Pattern）
   </a>
-* 桥接模式（Bridge Pattern）
-* 组合模式（Composite Pattern）
-* 外观模式（Facade Pattern）
-* 适配器模式（Adapter Pattern）
+* <a href="./2_the_brige_pattern.js" target="_blank">
+    桥接模式（Bridge Pattern）
+  </a>
+* <a href="./3_composote_pattern.js" target="_blank">
+    组合模式（Composite Pattern）
+  </a>
+* <a href="./4_the_facade_pattern.js" target="_blank">
+    外观模式（Facade Pattern）
+  </a>
+* <a href="./5_adapter_pattern.js" target="_blank">
+    适配器模式（Adapter Pattern）
+  </a>
 * <a href="./6_decorator_pattern.js" target="_blank">
     装饰者模式（Decorator Pattern）
   </a>
