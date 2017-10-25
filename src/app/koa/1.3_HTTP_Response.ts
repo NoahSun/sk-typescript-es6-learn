@@ -8,7 +8,7 @@ const app = new Koa();
 const main: Koa.Middleware = ctx => {
     if (ctx.request.accepts('xml')) {
         ctx.response.type = 'xml';
-        ctx.response.body = '<data>Hello Koa - xml</data>'
+        ctx.response.body = '<data>Hello Koa - xml</data>';
     } else if (ctx.request.accepts('json')) {
         ctx.response.type = 'json';
         ctx.response.body = { data: 'Hello Koa - json' };
@@ -19,7 +19,7 @@ const main: Koa.Middleware = ctx => {
         ctx.response.type = 'text';
         ctx.response.body = 'Hello World';
     }
-}
+};
 
 app.use(main);
 app.listen(3000);

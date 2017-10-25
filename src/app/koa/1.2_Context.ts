@@ -1,4 +1,4 @@
-import * as Koa from "koa"
+import * as Koa from "koa";
 const app = new Koa();
 
 /**
@@ -11,7 +11,7 @@ const app = new Koa();
 const main = ctx => {
     ctx.response.body = 'Hello Koa';
     console.log(JSON.stringify(ctx, null, 4));
-}
+};
 
 app.use(main);
 app.listen(3000);
